@@ -1,4 +1,4 @@
-def binarySearch(array, length, number):
+def binary_search(array, length, number):
     begin = center = 0
     end = length -1
     while(begin <= end):
@@ -13,7 +13,7 @@ def binarySearch(array, length, number):
     return -1
 
 
-def binarySearchRecursive(array, number, length, start = 0):
+def binary_search_recursive(array, number, length, start = 0):
     # length is the last index, is the end of the array
     if length >= start:
         mid = (length + start)//2
@@ -21,17 +21,15 @@ def binarySearchRecursive(array, number, length, start = 0):
         if array[mid] == number:
             return mid
         elif number < array[mid]:
-            return binarySearchRecursive(array, number, mid-1, start)
+            return binary_search_recursive(array, number, mid-1, start)
         else:
-            return binarySearchRecursive(array, number, length, mid+1)
+            return binary_search_recursive(array, number, length, mid+1)
     else:
         return -1
     
-    
-
 
 numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
 
-print(binarySearch(numbers, len(numbers), 10))
+print(binary_search(numbers, len(numbers), 10))
 
-print(binarySearchRecursive(numbers, 10, len(numbers)-1))
+print(binary_search_recursive(numbers, 10, len(numbers)-1))
