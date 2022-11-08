@@ -1,15 +1,15 @@
 def binary_search(array, length, number):
-    begin = center = 0
+    begin = mid = 0
     end = length -1
     while(begin <= end):
-        center = (begin + end)//2
-        if number < array[center]:
-            end = center - 1
+        mid = (begin + end)//2
+        if number < array[mid]:
+            end = mid - 1
         else:
-            if number > array[center]:
-                begin = center + 1
+            if number > array[mid]:
+                begin = mid + 1
             else:
-                return center
+                return mid
     return -1
 
 
